@@ -25,7 +25,8 @@ const AcknowledgmentPage = () => {
           clearInterval(intervalId);
           window.open(whatsappAPIUrl, '_blank');
           localStorage.removeItem("FormData");
-          return 0; // To avoid negative values
+          navigate('/');
+          return 0; 
         }
         return prevCount - 1;
       });

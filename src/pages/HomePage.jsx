@@ -13,7 +13,7 @@ const HomePage = () => {
         ></iframe>
       </div>
 
-      <div className="flex justify-center items-center mt-4 row-span-1">
+      <div className="flex justify-center items-center md:mt-12  row-span-2">
         <Link to="/user-form">
           <button className="px-5 py-2 rounded-full border border-solid bg-violet-500 hover:bg-violet-400 active:bg-violet-600 font-semibold text-white shadow-md">
             Register Now
