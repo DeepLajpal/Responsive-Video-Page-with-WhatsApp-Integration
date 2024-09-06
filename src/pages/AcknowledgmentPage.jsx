@@ -13,12 +13,11 @@ const AcknowledgmentPage = () => {
     const formData = JSON.parse(localStorage.getItem("FormData"));
     if (formData) {
       const { name, email, phoneNumber } = formData;
-      const message = `Hello, I am ${name}. My email is ${email} and my phone number is ${phoneNumber}.`;
+      const message = `Hello, I am *${name}*. My email is *${email}* and my phone number is *${phoneNumber}*.`;
       const encodedURLMessage = encodeURIComponent(message);
       console.log("encodedURLMessage", encodedURLMessage)
       const whatsappAPIUrl = `https://wa.me/${phoneNumber}?text=${encodedURLMessage}`
       if (count <= 0) {
-        // window.location.href = whatsappAPIUrl;
         window.open(whatsappAPIUrl, '_blank');
         clearInterval(intervalId);
         localStorage.removeItem("FormData");
