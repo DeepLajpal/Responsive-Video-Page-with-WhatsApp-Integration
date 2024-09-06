@@ -19,7 +19,7 @@ const AcknowledgmentPage = () => {
     // Structuring the message with bold labels and new lines for each field
     const message = `*Name:* ${name}\n*Email:* ${email}\n*Phone Number:* ${phoneNumber}\n*Query:* ${query}`;
     const encodedURLMessage = encodeURIComponent(message);
-    const whatsappAPIUrl = `https://wa.me/91${phoneNumber}?text=${encodedURLMessage}`;
+    const whatsappAPIUrl = `https://wa.me/917065114127?text=${encodedURLMessage}`;
 
     const intervalId = setInterval(() => {
       setCount(prevCount => {
