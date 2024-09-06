@@ -10,7 +10,6 @@ const UserForm = () => {
 
     const handleFormData = (e) => {
         e.preventDefault();
-        console.log({ name, email, phoneNumber });
         navigate("/user-form/acknowledgment");
 
         const stringifyFormData = JSON.stringify({ name, email, phoneNumber });
