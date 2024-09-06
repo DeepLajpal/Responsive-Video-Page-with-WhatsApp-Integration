@@ -3,7 +3,7 @@ function App() {
 
   return (
 
-    <div className="border-2 border-black h-screen	w-screen grid place-items-center" >
+    <div className="border-2 border-black h-screen	w-screen grid place-items-center overflow-hidden" >
       <Outlet/>
     </div>
   )
