@@ -5,13 +5,14 @@ const UserForm = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
+    const [query, setQuery] = useState(""); // Added state for query
     const navigate = useNavigate();
 
     const handleFormData = (e) => {
         e.preventDefault();
         navigate("/user-form/acknowledgment");
 
-        const stringifyFormData = JSON.stringify({ name, email, phoneNumber });
+        const stringifyFormData = JSON.stringify({ name, email, phoneNumber, query }); // Include query in form data
         localStorage.setItem("FormData", stringifyFormData);
     }
 
@@ -33,7 +34,7 @@ const UserForm = () => {
     }
 
     return (
-        <form onSubmit={handleFormData} className="w-full min-w-[300px]  max-w-[400px] h-4/5 min-h-[200px] max-h-[425px] mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <form onSubmit={handleFormData} className="w-full min-w-[300px]  max-w-[400px] h-4/5 min-h-[200px] max-h-auto mx-auto p-6 bg-white rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">User Form</h2>
             
             <div className="mb-5">
@@ -83,6 +84,22 @@ const UserForm = () => {
                     onInput={handleInput}
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5"
                     placeholder="Enter phone number"
+                />
+            </div>
+
+            {/* Query Field */}
+            <div className="mb-5">
+                <label htmlFor="query" className="block mb-2 text-sm font-medium text-gray-900">Query</label>
+                <textarea 
+                    id="query" 
+                    name="query" 
+                    required 
+                    onChange={(e) => setQuery(e.target.value)} 
+                    value={query} 
+                    onInvalid={handleInvalid} 
+                    onInput={handleInput}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5"
+                    placeholder="Enter your query"
                 />
             </div>
 

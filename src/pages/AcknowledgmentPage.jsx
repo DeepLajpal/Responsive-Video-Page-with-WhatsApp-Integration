@@ -14,8 +14,10 @@ const AcknowledgmentPage = () => {
       return;
     }
 
-    const { name, email, phoneNumber } = formData;
-    const message = `Hello, I am ${name}. My email is ${email} and my phone number is ${phoneNumber}.`;
+    const { name, email, phoneNumber, query } = formData;
+    
+    // Structuring the message with bold labels and new lines for each field
+    const message = `*Name:* ${name}\n*Email:* ${email}\n*Phone Number:* ${phoneNumber}\n*Query:* ${query}`;
     const encodedURLMessage = encodeURIComponent(message);
     const whatsappAPIUrl = `https://wa.me/${phoneNumber}?text=${encodedURLMessage}`;
 
