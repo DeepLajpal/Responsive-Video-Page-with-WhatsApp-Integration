@@ -3,31 +3,28 @@ import { useNavigate } from "react-router-dom";
 
 const AcknowledgmentPage = () => {
   const navigate = useNavigate();
-  const [count, setCount] = useState(5);
-
+  const [count, setCount] = useState(3);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCount(count - 1);
     }, 1000)
 
-
-
     const formData = JSON.parse(localStorage.getItem("FormData"));
     if (formData) {
       const { name, email, phoneNumber } = formData;
-      const message = `Hello, I am ${name}. My email is ${email} and my phone number is ${phoneNumber}.`;
+      const message = `Hello, I am *${name}*. My email is *${email}* and my phone number is *${phoneNumber}*.`;
       const encodedURLMessage = encodeURIComponent(message);
       console.log("encodedURLMessage", encodedURLMessage)
       const whatsappAPIUrl = `https://wa.me/${phoneNumber}?text=${encodedURLMessage}`
       if (count <= 0) {
-        window.location.href = whatsappAPIUrl;
+        window.open(whatsappAPIUrl, '_blank');
         clearInterval(intervalId);
         localStorage.removeItem("FormData");
       }
     } else {
       navigate('/');
-      setCount(5);
+      setCount(3);
     }
   }, [navigate, count ])
   return (
