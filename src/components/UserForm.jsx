@@ -5,14 +5,14 @@ const UserForm = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
-    const [query, setQuery] = useState(""); // Added state for query
+    const [query, setQuery] = useState("");
     const navigate = useNavigate();
 
     const handleFormData = (e) => {
         e.preventDefault();
         navigate("/user-form/acknowledgment");
 
-        const stringifyFormData = JSON.stringify({ name, email, phoneNumber, query }); // Include query in form data
+        const stringifyFormData = JSON.stringify({ name, email, phoneNumber, query });
         localStorage.setItem("FormData", stringifyFormData);
     }
 
