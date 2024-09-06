@@ -4,7 +4,7 @@ import partyPopper from "../assets/party-popper.gif";
 
 const AcknowledgmentPage = () => {
   const navigate = useNavigate();
-  const [count, setCount] = useState(4);
+  const [count, setCount] = useState(5);
 
   useEffect(() => {
     const formData = JSON.parse(localStorage.getItem("FormData"));
@@ -37,11 +37,11 @@ const AcknowledgmentPage = () => {
   }, [navigate]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-full">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <img 
         src={partyPopper} 
         alt="Party Popper" 
-        className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 mb-4"
+        className="w-16 h-16 sm:w-24 sm:h-24 md:w-34 md:h-34 lg:w-38 lg:h-38 mb-4"
       />
       <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Thank You!</h1>
       <p className="text-center text-base sm:text-lg md:text-xl text-gray-700 mb-4">
