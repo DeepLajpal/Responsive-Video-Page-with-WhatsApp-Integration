@@ -91,3 +91,6 @@ npm run lint
 - ESLint: A tool for identifying and fixing problems in JavaScript code.
 - Prettier: An opinionated code formatter.
 
+### Live Project URL: https://responsive-video-page-with-whats-app-integration.vercel.app/
+
+
