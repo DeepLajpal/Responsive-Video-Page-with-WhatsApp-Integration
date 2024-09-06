@@ -15,6 +15,12 @@ const UserForm = () => {
         const stringifyFormData = JSON.stringify({ name, email, phoneNumber });
         localStorage.setItem("FormData", stringifyFormData);
     }
+    const handleInvalid = (e) => {
+        const inputElement = e.target;
+        inputElement.setCustomValidity(`Invalid! ${e.target.name}, Please enter a valid ${e.target.name}`)
+    }
+    
+    
 
     return (
         <div className=''>
@@ -25,7 +31,7 @@ const UserForm = () => {
                 </div>
                 <div className=''>
                     <label htmlFor="email">Email: </label>
-                    <input type="email" id='email' name="email" required onChange={(e) => setEmail(e.target.value)} />
+                    <input type="email" id='email' name="email" required onChange={(e) => setEmail(e.target.value)} onInvalid={handleInvalid} />
                 </div>
                 <div className=''>
                     <label htmlFor="phoneNumber">Phone No: </label>
